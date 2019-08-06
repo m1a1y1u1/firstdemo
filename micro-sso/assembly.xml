@@ -1,0 +1,34 @@
+<!--利用assembly插件重新组织打包结构，独立主运行jar，依赖jar和配置打入独立压缩包内-->
+<assembly>
+    <id>${artifactId}-${project.version}-assembly</id>
+    <formats>
+         <format>tar.gz</format><!--打包的文件格式,也可以有：war zip-->
+    </formats>
+    <!--tar.gz压缩包下是否生成和项目名相同的根目录-->
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>target/classes</directory>
+            <outputDirectory>config</outputDirectory>
+            <includes>
+                <include>*.yml</include>
+                <include>*.xml</include>
+                <include>*.properties</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>target/classes</directory>
+            <outputDirectory>resources</outputDirectory>
+            <includes>
+                <include>static/**</include>
+                <include>templates/**</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>lib</outputDirectory>
+            <useProjectArtifact>false</useProjectArtifact>
+        </dependencySet>
+    </dependencySets>
+</assembly>

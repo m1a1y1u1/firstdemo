@@ -1,0 +1,3 @@
+entity-packages: com.springcloud.microsso.domain,com.springcloud.microcommon.domain
+transactional-packages: com.springcloud.microsso,com.springcloud.microcommon
+querybean-packages: com.springcloud.microsso,com.springcloud.microcommon

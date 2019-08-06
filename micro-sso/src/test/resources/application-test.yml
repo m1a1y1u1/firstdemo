@@ -1,0 +1,12 @@
+ebean:
+  test:
+    useDocker: false  # DO NOT USE DOCKER
+    #    shutdown: stop # stop | remove
+    platform: mysql # h2, postgres, mysql, oracle, sqlserver, sqlite
+    ddlMode: dropCreate # none | dropCreate | create | migration | createOnly | migrationDropCreate
+    dbName: micro_sso
+    currentUserProvider: "1234"
+    mysql:
+      username: root
+      password: jpress
+      url: jdbc:mysql://118.187.7.77:3307/micro_sso?useSSL=false&useUnicode=true&characterEncoding=utf-8
