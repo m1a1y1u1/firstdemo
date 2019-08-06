@@ -6,6 +6,6 @@ eureka:
       lease-expiration-duration-in-seconds: 30
       lease-renewal-interval-in-seconds: 10
     service-url:
-      defaultZone: http://localhost:8080/eureka/
+      defaultZone: http://localhost:3000/eureka/
 server:
   port: 8976

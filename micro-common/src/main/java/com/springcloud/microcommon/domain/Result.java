@@ -2,6 +2,7 @@ package com.springcloud.microcommon.domain;
 
 import com.springcloud.microcommon.enums.ResultCode;
 import lombok.Data;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * @Copyright: Zhejiang Drore Technology Co., Ltd  2019 <br/>
@@ -12,13 +13,13 @@ import lombok.Data;
  */
 @Data
 public class Result {
-    private ResultCode code;
+    private int code;
     private String msg;
     private Object data;
 
-    public Result(ResultCode code, String msg, Object data) {
-        this.code = code;
-        this.msg = msg;
+    public Result(ResultCode codeEnum, String msg, Object data) {
+        this.code = codeEnum.getCode();
+        this.msg = StringUtils.isBlank(msg) ? codeEnum.getDescription() : msg;
         this.data = data;
     }
 }

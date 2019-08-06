@@ -1,4 +1,4 @@
-package com.springcloud.microhomesite;
+package com.springcloud.microautotest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MicroHomeSiteApplicationTests {
+public class MicroAutoTestApplicationTests {
 
     @Test
     public void contextLoads() {
