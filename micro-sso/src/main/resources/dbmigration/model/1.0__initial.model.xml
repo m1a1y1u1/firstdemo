@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<migration xmlns="http://ebean-orm.github.io/xml/ns/dbmigration">
+    <changeSet type="apply">
+        <createTable name="user" pkName="pk_user" comment="基础用户表">
+            <column name="id" type="bigint" primaryKey="true"/>
+            <column name="name" type="varchar" comment="用户名"/>
+            <column name="nick_name" type="varchar" comment="昵称"/>
+            <column name="password" type="varchar" comment="密码"/>
+            <column name="ages" type="integer" comment="年龄"/>
+            <column name="gender" type="integer" checkConstraint="check ( gender in (0,1,2))" checkConstraintName="ck_user_gender" comment="性别"/>
+            <column name="version" type="bigint" notnull="true"/>
+            <column name="when_created" type="timestamp" notnull="true"/>
+            <column name="when_modified" type="timestamp" notnull="true"/>
+            <column name="who_created" type="varchar" notnull="true"/>
+            <column name="who_modified" type="varchar" notnull="true"/>
+            <column name="deleted" type="boolean" defaultValue="false" notnull="true"/>
+        </createTable>
+    </changeSet>
+</migration>
