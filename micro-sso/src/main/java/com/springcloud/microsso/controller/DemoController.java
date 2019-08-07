@@ -1,7 +1,9 @@
 package com.springcloud.microsso.controller;
 
 import com.springcloud.microsso.domain.User;
+import com.springcloud.microsso.domain.dto.UserQueryCondition;
 import com.springcloud.microsso.service.DemoService;
+import io.ebean.PagedList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +30,11 @@ public class DemoController {
     @GetMapping(value = "/user", produces = {MediaType.APPLICATION_JSON_VALUE})
     public User insert(String name) {
         return demoService.findByName(name);
+    }
+
+    @PostMapping(value = "/user/paged-list", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public PagedList<User> pagedList(@RequestBody UserQueryCondition condition) {
+        return demoService.queryPagedList(condition);
     }
 
     @PostMapping(value = "/user", produces = {MediaType.APPLICATION_JSON_VALUE})

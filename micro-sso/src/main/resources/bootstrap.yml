@@ -7,6 +7,12 @@ spring:
     config:
       uri: http://localhost:8974
       fail-fast: true
+# 启用端点 env
+management.endpoint.env.enabled: true
+##开放所有监控
+management.endpoints.web.exposure.include: '*'
+##health详情
+management.endpoint.health.show-details: always
 ## run migrations when the EbeanServer starts
 ebean.db.ddl.generate: true
 ebean.db.ddl.run: true

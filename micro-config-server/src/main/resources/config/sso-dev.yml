@@ -1,0 +1,18 @@
+eureka:
+  client:
+#    healthcheck:
+#      enabled: true
+    instance:
+      lease-expiration-duration-in-seconds: 30
+      lease-renewal-interval-in-seconds: 10
+    service-url:
+      defaultZone: http://localhost:3000/eureka/
+#==== connect to mysql ======#
+datasource:
+  sso:
+    url: jdbc:mysql://118.187.7.77:3307/micro_sso?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: jpress
+
+server:
+  port: 8977

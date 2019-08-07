@@ -7,7 +7,7 @@ package com.springcloud.microcommon.enums;
  * @Date: 2019/7/5 9:41 <br/>
  * @Author: 玄冥
  */
-public enum ResultCode implements IResultCode{
+public enum ResultCode implements IResultCode {
     /**
      * 成功
      */
@@ -30,10 +30,12 @@ public enum ResultCode implements IResultCode{
         this.code = code;
         this.description = description;
     }
+
     @Override
     public int getCode() {
         return code;
     }
+
     @Override
     public String getDescription() {
         return description;

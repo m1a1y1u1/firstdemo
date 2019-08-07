@@ -10,12 +10,14 @@ package com.springcloud.microcommon.enums;
 public interface IResultCode {
     /**
      * 响应编码
+     *
      * @return
      */
     int getCode();
 
     /**
      * 响应编码描述
+     *
      * @return
      */
     String getDescription();

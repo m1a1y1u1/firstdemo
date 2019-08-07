@@ -1,0 +1,5 @@
+FROM java:8
+VOLUME /tmp
+ADD target/$JAR_NAME-$VERSION.jar /usr/local/springcloud-docker/$JAR_NAME.jar
+
+ENV

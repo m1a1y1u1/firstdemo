@@ -1,0 +1,6 @@
+FROM java:latest
+VOLUME /tmp
+ADD micro-config-server-0.0.1-SNAPSHOT.jar config-server.jar
+RUN bash -c 'touch /config-server.jar'
+ENTRYPOINT ["java","-jar","/config-server.jar"]
+EXPOSE 8002
