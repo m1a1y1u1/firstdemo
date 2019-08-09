@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<migration xmlns="http://ebean-orm.github.io/xml/ns/dbmigration">
+    <changeSet type="apply">
+        <createTable name="swagger_client" pkName="pk_swagger_client" comment="Swagger2 client 注册信息实体类">
+            <column name="id" type="bigint" primaryKey="true"/>
+            <column name="register_manage_api" type="varchar" comment="将当前服务注册到swagger管理平台的接口"/>
+            <column name="title" type="varchar" comment="工程标题"/>
+            <column name="description" type="varchar" comment="工程描述"/>
+            <column name="api_version" type="varchar" comment="api doc 版本"/>
+            <column name="profile" type="varchar" comment="api doc 版本"/>
+            <column name="call_back_host" type="varchar" comment="api doc json 拉取地址"/>
+            <column name="version" type="bigint" notnull="true"/>
+            <column name="when_created" type="timestamp" notnull="true"/>
+            <column name="when_modified" type="timestamp" notnull="true"/>
+            <column name="who_created" type="varchar" notnull="true"/>
+            <column name="who_modified" type="varchar" notnull="true"/>
+            <column name="deleted" type="boolean" defaultValue="false" notnull="true"/>
+        </createTable>
+    </changeSet>
+</migration>
