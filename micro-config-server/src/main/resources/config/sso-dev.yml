@@ -13,6 +13,11 @@ datasource:
     url: jdbc:mysql://118.187.7.77:3307/micro_sso?useSSL=false&useUnicode=true&characterEncoding=utf-8
     username: root
     password: jpress
-
+#Swagger Configure Properties
+sop.swagger.enable: true
+sop.swagger.packageScan: com.springcloud.microsso
+sop.swagger.title: SSO登录 接口文档
+sop.swagger.description: 实现单点登录
+sop.swagger.apiVersion: 1.0
 server:
   port: 8977

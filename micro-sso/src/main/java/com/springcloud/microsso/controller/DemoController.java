@@ -4,6 +4,7 @@ import com.springcloud.microsso.domain.User;
 import com.springcloud.microsso.domain.dto.UserQueryCondition;
 import com.springcloud.microsso.service.DemoService;
 import io.ebean.PagedList;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -17,11 +18,16 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/demo")
+@Api("Demo Controller 用户为例")
 public class DemoController {
 
     @Autowired
     private DemoService demoService;
 
+    @ApiOperation("获取用户信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(paramType = "id", name = "id", dataType = "Long", required = true,value = "用户Id")
+    })
     @GetMapping(value = "/user/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public User insert(@PathVariable Long id) {
         return demoService.findById(id);

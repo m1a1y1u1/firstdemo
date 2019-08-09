@@ -20,6 +20,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.springcloud</groupId>
             <artifactId>micro-common</artifactId>
             <version>${micro.common.version}</version>

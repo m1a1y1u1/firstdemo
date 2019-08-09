@@ -2,7 +2,7 @@ package com.springcloud.microcommon.domain;
 
 import com.springcloud.microcommon.enums.ResultCode;
 import lombok.Data;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @Copyright: Zhejiang Drore Technology Co., Ltd  2019 <br/>

@@ -12,7 +12,7 @@ public class GenerateDbMigration {
 
     DbMigration dbMigration = DbMigration.create();
     dbMigration.setPlatform(Platform.MYSQL);
-    dbMigration.setPathToResources("E:/work/firstdemo/micro-sso/src/main/resources");
+    dbMigration.setPathToResources("micro-sso/src/main/resources");
     dbMigration.generateMigration();
   }
 }
