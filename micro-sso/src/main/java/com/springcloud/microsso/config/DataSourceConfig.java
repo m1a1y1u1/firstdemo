@@ -19,15 +19,15 @@ public class DataSourceConfig {
     @Bean
     @Primary
     @ConfigurationProperties("datasource.sso")
-    public DataSourceProperties firstDataSourceProperties() {
+    public DataSourceProperties ssoDataSourceProperties() {
         return new DataSourceProperties();
     }
 
     @Bean
     @Primary
     @ConfigurationProperties("datasource.sso.configuration")
-    public HikariDataSource firstDataSource() {
-        DataSourceProperties properties = firstDataSourceProperties();
+    public HikariDataSource ssoDataSource() {
+        DataSourceProperties properties = ssoDataSourceProperties();
         return properties.initializeDataSourceBuilder()
                 .type(HikariDataSource.class).build();
     }

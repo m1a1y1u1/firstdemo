@@ -15,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 public class ResultWrapper {
 
     public static Result valueOf(Object data) {
-        return new Result(ResultCode.Success, null, null);
+        return new Result(ResultCode.Success, null, data);
     }
 
     public static Result error(ResultCode resultCode, String msg) {

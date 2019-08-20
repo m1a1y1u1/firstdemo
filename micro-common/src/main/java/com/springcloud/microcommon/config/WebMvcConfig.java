@@ -10,4 +10,5 @@ import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguratio
  * @author: 马雨
  */
 public class WebMvcConfig extends WebMvcAutoConfiguration {
+
 }

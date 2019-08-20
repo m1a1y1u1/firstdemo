@@ -3,16 +3,16 @@ sop.swagger.enable: true
 sop.swagger.description: BaseModule Restfull API
 sop.swagger.version: 1.0
 
-#httpÅäÖÃ·şÎñ
-#×î´óÁ¬½ÓÊı
+#httpé…ç½®æœåŠ¡
+#æœ€å¤§è¿æ¥æ•°
 http.maxTotal: 100
-#²¢·¢Êı
+#å¹¶å‘æ•°
 http.defaultMaxPerRoute: 20
-#´´½¨Á¬½ÓµÄ×î³¤Ê±¼ä
+#åˆ›å»ºè¿æ¥çš„æœ€é•¿æ—¶é—´
 http.connectTimeout: 1000
-#´ÓÁ¬½Ó³ØÖĞ»ñÈ¡µ½Á¬½ÓµÄ×î³¤Ê±¼ä
+#ä»è¿æ¥æ± ä¸­è·å–åˆ°è¿æ¥çš„æœ€é•¿æ—¶é—´
 http.connectionRequestTimeout: 500
-#Êı¾İ´«ÊäµÄ×î³¤Ê±¼ä
+#æ•°æ®ä¼ è¾“çš„æœ€é•¿æ—¶é—´
 http.socketTimeout: 10000
-#Ìá½»ÇëÇóÇ°²âÊÔÁ¬½ÓÊÇ·ñ¿ÉÓÃ
+#æäº¤è¯·æ±‚å‰æµ‹è¯•è¿æ¥æ˜¯å¦å¯ç”¨
 http.staleConnectionCheckEnabled: true

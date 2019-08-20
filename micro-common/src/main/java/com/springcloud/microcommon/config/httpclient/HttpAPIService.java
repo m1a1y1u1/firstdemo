@@ -12,6 +12,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.http.HttpProperties;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -89,13 +90,14 @@ public class HttpAPIService {
         // 加入配置信息
         httpPost.setConfig(config);
         httpPost.setHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-
+        httpPost.setHeader(HttpHeaders.CONTENT_ENCODING, HttpProperties.Encoding.DEFAULT_CHARSET.displayName());
         // 判断map是否为空，不为空则进行遍历，封装from表单对象
         ObjectMapper mapper = new ObjectMapper();
         String requestParams = mapper.writeValueAsString(map);
         if (StringUtils.isNotBlank(requestParams)) {
 
-            StringEntity entity = new StringEntity(requestParams);
+            StringEntity entity = new StringEntity(requestParams,HttpProperties.Encoding.DEFAULT_CHARSET.displayName());
+            entity.setContentType("application/json;charset=utf-8");
             httpPost.setEntity(entity);
         }
 

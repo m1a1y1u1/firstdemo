@@ -7,13 +7,24 @@ spring:
     config:
       uri: http://localhost:8974
       fail-fast: true
+
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+#熔断器配置
+feign:
+  hystrix:
+    enabled: true
 #Swagger Configure Properties
-sop.swagger.enable: true
-sop.swagger.packageScan: com.springcloud.microsso
-sop.swagger.title: 单点登录 Restfull API
-sop.swagger.description: UserController Restfull API
-sop.swagger.version: 3.0
-sop.swagger.registerManageApi: http://127.0.0.1:8977/v2/client
+sop:
+  swagger:
+    enable: true
+    packageScan: com.springcloud.microsso
+    title: 单点登录 Restfull API
+    description: UserController Restfull API
+    version: 3.0
+    registerManageApi: http://127.0.0.1:8978/v2/client
 #http配置服务
 #最大连接数
 http.maxTotal: 100
@@ -28,7 +39,6 @@ http.socketTimeout: 10000
 #提交请求前测试连接是否可用
 http.staleConnectionCheckEnabled: true
 
-
 # 启用端点 env
 management.endpoint.env.enabled: true
 ##开放所有监控
@@ -41,3 +51,5 @@ ebean.db.ddl.run: true
 
 logging.level.io.ebean.SQL: DEBUG
 logging.level.io.ebean.TXN: DEBUG
+logging.level.org.springframework: DEBUG
+logging.level.com.howtodoinjava: DEBUG

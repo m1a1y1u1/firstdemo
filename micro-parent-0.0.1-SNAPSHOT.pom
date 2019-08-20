@@ -21,6 +21,7 @@
         <ebean.version>11.41.1</ebean.version>
         <springfox.version>2.6.1</springfox.version>
         <commons-lang3.version>3.9</commons-lang3.version>
+        <spring.oauth2.version>2.3.4.RELEASE</spring.oauth2.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -87,6 +88,11 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${spring.oauth2.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,4 +1,4 @@
-package com.springcloud.microsso.domain;
+package com.springcloud.microcommon.domain;
 
 import io.ebean.config.CurrentUserProvider;
 import org.springframework.stereotype.Component;
@@ -11,6 +11,6 @@ public class CurrentUser implements CurrentUserProvider {
 
   @Override
   public Object currentUser() {
-    return "test";
+    return "测试";
   }
 }

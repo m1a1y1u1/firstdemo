@@ -1,7 +1,7 @@
 package com.springcloud.microcommon.config.swagger;
 
 import com.springcloud.microcommon.config.httpclient.HttpAPIService;
-import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
@@ -20,7 +20,7 @@ import java.util.Map;
  * @author: 马雨
  */
 @Configuration
-@Log
+@Slf4j
 public class SwaggerServerRegisterConfig implements ApplicationRunner {
 
     @Value("${server.port}")
@@ -32,11 +32,17 @@ public class SwaggerServerRegisterConfig implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        String localhost = InetAddress.getLocalHost().getHostAddress();
-        log.info(String.format("swagger api 地址：%s", "http://" + localhost + ":" + port + "/v2/api-docs"));
-        log.info("注册当前工程到Swagger api文档管理服务..");
-        // 获取上传者信息，历史版本保留
-        Map<String, Object> authorInfo = BeanMap.create(properties);
-        httpAPIService.doPost(properties.getRegisterManageApi(), authorInfo);
+        try {
+            String localhost = InetAddress.getLocalHost().getHostAddress();
+            log.info(String.format("swagger api 地址：%s", "http://" + localhost + ":" + port + "/v2/api-docs"));
+            log.info("注册当前工程到Swagger api文档管理服务..");
+            // 获取上传者信息，历史版本保留
+            Map<String, Object> authorInfo = BeanMap.create(properties);
+            httpAPIService.doPost(properties.getRegisterManageApi(), authorInfo);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("同步swagger api doc管理服务失败：{}",e.getMessage());
+        }
+
     }
 }

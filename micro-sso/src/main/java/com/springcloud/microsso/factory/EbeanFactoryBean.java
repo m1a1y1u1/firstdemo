@@ -1,6 +1,6 @@
 package com.springcloud.microsso.factory;
 
-import com.springcloud.microsso.domain.CurrentUser;
+import com.springcloud.microcommon.domain.CurrentUser;
 import io.ebean.EbeanServer;
 import io.ebean.EbeanServerFactory;
 import io.ebean.config.CurrentUserProvider;
@@ -8,7 +8,6 @@ import io.ebean.config.ServerConfig;
 import io.ebean.spring.txn.SpringJdbcTransactionManager;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;

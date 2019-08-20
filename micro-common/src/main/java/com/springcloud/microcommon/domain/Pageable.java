@@ -13,7 +13,7 @@ import lombok.Data;
 @Data
 public class Pageable {
     private int pageIndex = 1;
-    private int pageSize = 10;
+    private int pageSize = 20;
     private String sortField = "id";
     private QuerySortTypeEnum sortType = QuerySortTypeEnum.DESC;
 }

@@ -12,7 +12,7 @@ public class UserTest {
  public void insertFindDelete() {
 
   User User = new User();
-  User.setName("Hello world中文推测");
+  User.setUsername("Hello world中文推测");
 
   Database database = DB.getDefault();
 
@@ -23,7 +23,7 @@ public class UserTest {
   // Find by Id
   User foundHello = database.find(User.class, 1);
 
-  System.out.print("hello " + foundHello.getName());
+  System.out.print("hello " + foundHello.getUsername());
 
   // delete the User
   // database.delete(User);

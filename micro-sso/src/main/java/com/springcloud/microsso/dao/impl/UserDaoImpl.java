@@ -1,7 +1,6 @@
 package com.springcloud.microsso.dao.impl;
 
 import com.springcloud.microcommon.dao.impl.BaseDaoImpl;
-import com.springcloud.microcommon.domain.BaseDomain;
 import com.springcloud.microsso.dao.UserDao;
 import com.springcloud.microsso.domain.User;
 import com.springcloud.microsso.domain.query.QUser;
@@ -20,11 +19,11 @@ public class UserDaoImpl extends BaseDaoImpl<User,Long> implements UserDao{
     /**
      * 根据名称获取User对象
      *
-     * @param name
+     * @param username
      * @return
      */
     @Override
-    public User findByName(String name) {
-        return new QUser().name.eq(name).findOne();
+    public User findByName(String username) {
+        return new QUser().username.eq(username).findOne();
     }
 }

@@ -37,6 +37,14 @@ public class SwaggerConfigProperties implements Serializable {
      */
     private String apiVersion;
     /**
+     * 工程代号
+     */
+    private String project;
+    /**
+     * 父工程代号
+     */
+    private String projectParent;
+    /**
      * 启动环境
      */
     @Value("${spring.profiles.active}")

@@ -28,6 +28,11 @@ public class BusinessException extends RuntimeException {
         this.errorCode = errorCode;
     }
 
+    public BusinessException(Object data) {
+        this.data = data;
+        this.errorCode = ResultCode.Fast_Fail;
+    }
+
     public BusinessException(ResultCode errorCode, Throwable cause) {
         super(cause);
         this.errorCode = errorCode;

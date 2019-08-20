@@ -19,16 +19,21 @@
     </properties>
 
     <dependencies>
+        <!--swagger start-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
         </dependency>
+        <!--swagger start-->
+        <!-- 通用工程，包含基础配置和规范化开发设置 start -->
         <dependency>
             <groupId>com.springcloud</groupId>
             <artifactId>micro-common</artifactId>
             <version>${micro.common.version}</version>
             <scope>compile</scope>
         </dependency>
+        <!-- 通用工程，包含基础配置和规范化开发设置 end -->
+        <!-- spring boot 相关 start -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -48,6 +53,19 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- spring boot 相关 end -->
+        <!-- spring oauth2 相关 start -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
+        <!-- spring oauth2 相关 end -->
+        <!-- spring cloud 相关 start -->
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
@@ -59,6 +77,8 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <!-- spring cloud 相关 end -->
+        <!-- mysql 相关 start -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -68,6 +88,8 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!-- mysql 相关 end -->
+        <!-- ebean 相关 start -->
         <dependency>
             <groupId>io.ebean</groupId>
             <artifactId>ebean</artifactId>
@@ -93,6 +115,8 @@
             <artifactId>ebean-test-config</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- ebean 相关 start -->
+        <!-- 相关工具依赖 start -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -107,11 +131,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>5.1.8.RELEASE</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test-autoconfigure</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- 相关工具依赖 end -->
     </dependencies>
     <build>
         <plugins>

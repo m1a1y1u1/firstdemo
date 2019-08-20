@@ -10,17 +10,17 @@ eureka:
       defaultZone: http://localhost:3000/eureka/
 #==== connect to mysql ======#
 datasource:
-  sso:
-    url: jdbc:mysql://118.187.7.77:3307/micro_sso?useSSL=false&useUnicode=true&characterEncoding=utf-8
+  auto-test:
+    url: jdbc:mysql://118.187.7.77:3307/micro_auto_test?useSSL=false&useUnicode=true&characterEncoding=utf-8
     username: root
     password: jpress
 #Swagger Configure Properties
 sop.swagger.enable: true
-sop.swagger.packageScan: com.springcloud.microsso
-sop.swagger.title: SSO登录 接口文档
-sop.swagger.description: 实现单点登录
-sop.swagger.apiVersion: 1.0
-sop.swagger.project: micro-sso
+sop.swagger.packageScan: com.springcloud.microautotest
+sop.swagger.title: 自动测试，工程api-docs管理
+sop.swagger.description: 自动测试，工程api-docs管理
+sop.swagger.project: micro-auto-test
 sop.swagger.project-parent: micro-parent
+sop.swagger.apiVersion: 1.0
 server:
-  port: 8977
+  port: 8978
